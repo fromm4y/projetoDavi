@@ -7,150 +7,166 @@
   <title>Resultado da Emoção</title>
 
   <style>
-    /* ====== SEU ESTILO COMPLETO (SEM ALTERAÇÕES) ====== */
-    /* ===== RESET BÁSICO ===== */
-    :root {
-      --bg: #f6fbff;
-      --card: #ffffff;
-      --text: #06314a;
-      --muted: #5f7b8a;
-      --accent: #0077b6;
-      --accent-2: #00a6dd;
-      --glass: rgba(255, 255, 255, 0.6);
-      --shadow: 0 6px 18px rgba(4, 21, 31, 0.08);
-      --radius: 14px;
-      --transition: 220ms ease;
-    }
+/* ===== ESTILO REFINADO — CLEAN E MODERNO ===== */
 
-    .dark {
-      --bg: #051428;
-      --card: #07283a;
-      --text: #e6f7ff;
-      --muted: #9ccfe6;
-      --accent: #4fd1ff;
-      --accent-2: #7ee8ff;
-      --glass: rgba(255, 255, 255, 0.03);
-      --shadow: 0 8px 28px rgba(0, 0, 0, 0.6);
-    }
+/* CORES E VARIÁVEIS */
+:root {
+  --bg: #f6fbff;
+  --card: #ffffff;
+  --text: #06314a;
+  --muted: #5f7b8a;
+  --accent: #0077b6;
+  --accent-2: #00a6dd;
+  --glass: rgba(255, 255, 255, 0.55);
+  --shadow: 0 8px 24px rgba(4, 21, 31, 0.08);
+  --radius: 18px;
+  --transition: 240ms ease;
+}
 
-    * {
-      box-sizing: border-box;
-    }
+.dark {
+  --bg: #050f1f;
+  --card: #082434;
+  --text: #e6f7ff;
+  --muted: #9ccfe6;
+  --accent: #4fd1ff;
+  --accent-2: #7ee8ff;
+  --glass: rgba(255, 255, 255, 0.06);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
 
-    html,
-    body {
-      height: 100%;
-    }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-    body {
-      margin: 0;
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background: linear-gradient(180deg, var(--bg), #eaf7ff 60%);
-      color: var(--text);
-      line-height: 1.45;
-      transition: background var(--transition), color var(--transition);
-      padding-bottom: 80px;
-    }
+body {
+  font-family: Inter, system-ui, sans-serif;
+  background: linear-gradient(180deg, var(--bg), #eaf7ff 60%);
+  color: var(--text);
+  padding-bottom: 80px;
+}
 
-    /* HEADER */
-    header {
-      position: sticky;
-      top: 0;
-      backdrop-filter: blur(6px);
-      background: linear-gradient(180deg, rgba(250, 250, 250, 0.6), rgba(250, 250, 250, 0.3));
-      border-bottom: 1px solid rgba(0, 0, 0, 0.04);
-      z-index: 50;
-    }
+/* HEADER */
+header {
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.35);
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
 
-    .site-header {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      gap: 16px;
-      align-items: center;
-      padding: 10px 18px;
-    }
+.site-header {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
 
-    .logo .mark {
-      width: 44px;
-      height: 44px;
-      border-radius: 10px;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      box-shadow: var(--shadow);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-weight: 700;
-      font-size: 18px;
-    }
+.logo .mark {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  color: white;
+  font-size: 18px;
+  box-shadow: var(--shadow);
+}
 
-    /* BOTÃO */
-    .btn {
-      background: var(--card);
-      border: 1px solid rgba(0, 0, 0, 0.05);
-      padding: 10px 16px;
-      border-radius: 10px;
-      font-weight: 700;
-      cursor: pointer;
-      box-shadow: var(--shadow);
-      transition: var(--transition);
-    }
+/* BOTÃO */
+.btn {
+  background: var(--card);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+}
 
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.12);
-    }
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.13);
+}
 
-    /* MAIN */
-    main {
-      max-width: 700px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
+/* MAIN */
+main {
+  max-width: 720px;
+  padding: 140px 20px 60px;  /* 🔥 ESPAÇO QUE GARANTE QUE NADA ENCOSTA NO HEADER */
+  margin: 0 auto;
+}
 
-    /* CARD CENTRAL */
-    .result-card {
-      background: var(--glass);
-      border-radius: var(--radius);
-      padding: 24px;
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
-      text-align: center;
-    }
+/* CARD CENTRAL */
+.result-card {
+  background: var(--glass);
+  padding: 34px 28px;
+  border-radius: var(--radius);
+  margin-top: 80px; /* safe zone */
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(16px);
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
 
-    .result-card img {
-      width: 100%;
-      max-width: 360px;
-      height: 260px;
-      object-fit: cover;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      margin: 16px auto;
-    }
+/* IMAGEM MAIOR NA TELA */
+.result-card img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  margin: 22px auto 32px auto;
+  object-fit: cover;
+  box-shadow: var(--shadow);
+}
 
-    /* TÍTULOS */
-    h1 {
-      color: var(--accent);
-      margin-top: 8px;
-    }
+/* BOTÃO EMBAIXO DA IMAGEM, CENTRALIZADO */
+.result-card .btn,
+.result-card button {
+  display: block;
+  margin: 20px auto 0 auto; /* centraliza e cola embaixo */
+  width: fit-content;
+}
 
-    h2 {
-      margin-top: 4px;
-      color: var(--text);
-    }
+.result-card:hover {
+  transform: translateY(-4px);
+}
 
-    footer.site-footer {
-      position: fixed;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(180deg, rgba(250, 250, 250, 0.9), rgba(250, 250, 250, 0.7));
-      border-top: 1px solid rgba(0, 0, 0, 0.04);
-      padding: 10px;
-      text-align: center;
-      font-weight: 600;
-    }
+/* TÍTULOS */
+h1 {
+  color: var(--accent);
+  font-size: 1.9rem;
+  margin-bottom: 8px;
+}
+
+h2 {
+  margin-top: 4px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+footer.site-footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  padding: 10px;
+  text-align: center;
+  font-weight: 600;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
   </style>
 </head>
 
