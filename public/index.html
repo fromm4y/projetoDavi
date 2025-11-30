@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description"
+    content="Projeto Caramelos Marinhos — Litoral Brasileiro: espécies, fatos científicos e conservação." />
+  <title>Litoral Brasileiro — Caramelos Marinhos</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.8.0/dist/tf.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="site-header" role="banner">
+      <div class="logo" aria-hidden="true">
+        <div class="mark">CM</div>
+        <div>
+          <div class="project-title">Caramelos Marinhos</div>
+          <div class="project-sub">Projeto Fundo do Mar — Litoral Brasileiro</div>
+        </div>
+      </div>
+
+      <nav aria-label="Principal">
+        <a href="#curiosidades">Curiosidades</a>
+        <a href="#fatos">Fatos</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div class="header-actions" role="navigation" aria-label="Ações">
+        <button id="themeToggle" class="btn ghost" aria-pressed="false" title="Alternar tema claro/escuro">Modo</button>
+        <button class="btn" id="btnTop" onclick="document.getElementById('topAnchor').focus()">Topo</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="topAnchor">
+    <!-- HERO -->
+    <section class="hero-card hero" aria-labelledby="hero-title">
+      <div class="hero-card-inner">
+        <div class="kicker">Projeto — Fundo do Mar</div>
+        <h1 id="hero-title">Litoral Brasileiro</h1>
+        <div class="slogan">Proteger os mares é cuidar do futuro</div>
+        <p class="summary">O litoral brasileiro é uma das maiores faixas costeiras do mundo, com cerca de 7.500 km de
+          extensão. Reúne praias, ecossistemas variados e rica biodiversidade.</p>
+
+        <div class="hero-ctas" role="group" aria-label="Ações principais">
+          <button id="abrirIA" class="btn" aria-label="Iniciar reconhecimento facial">Reconhecimento
+            Facial</button>
+          <button id="btnAbrirChatbot" class="btn" aria-label="Abrir chatbot">Abrir Chatbot</button>
+        </div>
+
+        <div class="small-meta">Equipe: Caramelos Marinhos — Matheus H. O. Santos, Davi O. Justino, Davi da S. Bispo
+        </div>
+      </div>
+
+      <figure class="hero-figure" role="img" aria-label="Imagem hero do litoral brasileiro">
+        <!-- TODO: substituir pela URL desejada -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/03/Muro_Alto-002.jpg"
+          alt="Praia do litoral brasileiro" />
+      </figure>
+    </section>
+
+    <!-- CURIOSIDADES -->
+    <section id="curiosidades" class="card" aria-labelledby="curio-title">
+      <h2 id="curio-title">Curiosidades</h2>
+      <p class="muted">Fatos rápidos sobre o litoral brasileiro.</p>
+      <div class="curios-list" role="list">
+        <div class="curio" role="listitem">
+          <div class="icon">🗺️</div>
+          <div>
+            <div class="card-title">Extensão gigante</div>
+            <div class="muted">O litoral do Brasil tem cerca de 7.500 km de extensão.</div>
+          </div>
+        </div>
+
+        <div class="curio" role="listitem">
+          <div class="icon">🌞</div>
+          <div>
+            <div class="card-title">Maior da América do Sul</div>
+            <div class="muted">O Brasil tem o maior litoral de toda a América do Sul.</div>
+          </div>
+        </div>
+
+        <div class="curio" role="listitem">
+          <div class="icon">🐢</div>
+          <div>
+            <div class="card-title">Berçário de tartarugas</div>
+            <div class="muted">Diversas tartarugas marinhas nidificam nas praias brasileiras.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FATOS / CIÊNCIA -->
+    <section id="fatos" class="card" aria-labelledby="fatos-title">
+      <h2 id="fatos-title">Fatos & Ciência</h2>
+      <p class="muted">Informações científicas sobre o litoral.</p>
+      <div class="grid-3">
+        <article class="card-item" aria-labelledby="f1">
+          <h3 id="f1" class="card-title">Extensão impressionante</h3>
+          <p class="muted">O litoral se estende do Oiapoque (AP) até o Chuí (RS), cobrindo milhares de km.</p>
+        </article>
+
+        <article class="card-item" aria-labelledby="f2">
+          <h3 id="f2" class="card-title">Recifes de corais</h3>
+          <p class="muted">Os recifes, como Abrolhos, são hotspots de biodiversidade marinha.</p>
+        </article>
+
+        <article class="card-item" aria-labelledby="f3">
+          <h3 id="f3" class="card-title">Ameaças atuais</h3>
+          <p class="muted">Poluição, urbanização e mudanças climáticas afetam ecossistemas costeiros.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- GALERIA -->
+    <section id="galeria" class="card" aria-labelledby="gal-title">
+      <h2 id="gal-title">Galeria</h2>
+      <p class="muted">Imagens representativas do litoral brasileiro.</p>
+      <div class="gallery" role="list">
+        <figure tabindex="0" role="listitem"><img
+            src="https://blog.stoodi.com.br/wp-content/uploads/2021/03/stoodi_stoodi_image_539.jpeg"
+            alt="Praia com água cristalina">
+          <figcaption class="muted">Praia cristalina</figcaption>
+        </figure>
+        <figure tabindex="0" role="listitem"><img
+            src="https://upload.wikimedia.org/wikipedia/commons/0/03/Muro_Alto-002.jpg" alt="Muro Alto">
+          <figcaption class="muted">Muro Alto (PE)</figcaption>
+        </figure>
+        <figure tabindex="0" role="listitem"><img
+            src="https://img.freepik.com/fotos-gratis/vista-fascinante-do-litoral-com-areia-branca-e-aguas-cristalinas-turquesa-na-indonesia_181624-18082.jpg"
+            alt="Praia tropical">
+          <figcaption class="muted">Praia tropical</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="card" aria-labelledby="faq-title">
+      <h2 id="faq-title">Perguntas Frequentes</h2>
+
+      <details>
+        <summary>Qual é a extensão do litoral brasileiro?</summary>
+        <p class="muted">Aproximadamente 7.500 km.</p>
+      </details>
+      <details>
+        <summary>Quantos estados têm litoral no Brasil?</summary>
+        <p class="muted">17 estados possuem litoral.</p>
+      </details>
+      <details>
+        <summary>O que ameaça o litoral brasileiro?</summary>
+        <p class="muted">Poluição, urbanização, turismo descontrolado e mudanças climáticas.</p>
+      </details>
+    </section>
+
+    <!-- CTA -->
+    <section class="card cta" aria-labelledby="cta-title">
+      <h3 id="cta-title">Quer aprender mais?</h3>
+      <p class="muted">Explore as fichas de espécies ou baixe nosso material educativo.</p>
+      <nav aria-label="Ações CTA"><a class="btn" href="#fatos">Aprenda mais</a></nav>
+    </section>
+
+    <!-- CRÉDITOS -->
+    <section class="card" aria-labelledby="credits">
+      <h2 id="credits">Créditos & Fontes</h2>
+      <ul class="muted">
+        <li>IBAMA, ICMBio, IUCN</li>
+        <li>Imagens: Stoodi, Wikimedia, Freepik, Shutterstock</li>
+      </ul>
+      <p class="muted"><strong>Integrantes:</strong> Matheus Henrique de Oliveira Santos; Davi Oliveira Justino; Davi da
+        Silva Bispo — <em>Caramelos Marinhos</em></p>
+    </section>
+  </main>
+
+  <!-- CHAT ASIDE -->
+  <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger
+      intent="WELCOME"
+      chat-title="Chatbot-IA"
+      agent-id="7e9ea28d-fc2a-4f18-a435-1d31267d9a34"
+      language-code="pt-br">
+    </df-messenger>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="muted">© <span id="year"></span> Caramelos Marinhos — Projeto Fundo do Mar.</div>
+    <div style="margin-left:12px"><a href="#topAnchor" class="link">Voltar ao topo</a></div>
+  </footer>
+
+  <!-- MODAL DE RECONHECIMENTO FACIAL -->
+<div id="cameraModal" class="camera-modal" aria-hidden="true">
+  <div class="camera-modal-content">
+    <button id="fecharModal" class="camera-close" title="Fechar">❌</button>
+    <h2 class="camera-title">Reconhecimento Facial</h2>
+    <div class="camera-video-box">
+      <video id="video" autoplay muted playsinline></video>
+    </div>
+    <div class="camera-controls">
+      <button id="tirarFoto" class="camera-btn">📸 Tirar Foto</button>
+    </div>
+    <p id="modalStatus" class="camera-status">Aguardando...</p>
+    <canvas id="fotoCanvas" style="display:none;"></canvas>
+  </div>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
