@@ -124,6 +124,8 @@ nav a:focus {
 
 .btn {
   background: var(--card);
+  background: linear-gradient(135deg, #00a6dd, #4dbcf0);
+  color:#e6f7ff;
   border: 1px solid rgba(0, 0, 0, 0.05);
   padding: 8px 12px;
   border-radius: 10px;
